@@ -1,6 +1,7 @@
 # NutriTrack - Smart Nutrition Companion 🥗
 
-![NutriTrack Banner](https://via.placeholder.com/1200x400.png?text=NutriTrack+-+Your+Personal+Food+Journey)
+![NutriTrack Banner](landing_page.png)
+
 
 A modern web application designed to revolutionize your nutrition tracking experience through intuitive interfaces and actionable insights.
 
@@ -19,6 +20,8 @@ Empower users to take control of their dietary habits through:
 3. Encourage healthy eating through positive reinforcement
 4. Offer insights into nutritional patterns
 5. Create an engaging user experience
+   ![NutriTrack Banner](calorie_tracker.png)
+   
 
 ## Frontend Functionality Highlights
 
