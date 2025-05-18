@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriTrack - Your Personal Food Journey</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Landing Page Section -->
+        <div id="landing-page" class="min-h-screen relative">
+            <!-- Background floating food icons -->
+            <div class="floating-food apple" style="left: 15%; top: 20%;">
+                <i class="fas fa-apple-alt"></i>
+            </div>
+            <div class="floating-food carrot" style="left: 75%; top: 30%;">
+                <i class="fas fa-carrot"></i>
+            </div>
+            <div class="floating-food egg" style="left: 25%; top: 60%;">
+                <i class="fas fa-egg"></i>
+            </div>
+            <div class="floating-food cherry" style="left: 85%; top: 70%;">
+                <i class="fas fa-apple-alt"></i>
+            </div>
+            <div class="floating-food heart" style="left: 50%; top: 40%;">
+                <i class="fas fa-heart"></i>
+            </div>
+            
+            <div class="container">
+                <!-- Hero Section -->
+                <div class="hero-section">
+                    <div class="hero-content animate-fade-in">
+                        <h1 class="hero-title">
+                            Track <span class="text-green">Meals</span>, Feel <span class="text-blue">Great</span>
+                        </h1>
+                        
+                        <p class="hero-subtitle">
+                            Your personal food journey begins here. Simple meal tracking with delightful insights to keep you motivated.
+                        </p>
+                        
+                        <!-- Plate illustration -->
+                        <div class="plate-illustration">
+                            <div class="plate"></div>
+                            <div class="plate-center"></div>
+                            <div class="food-item food-item-1"></div>
+                            <div class="food-item food-item-2"></div>
+                        </div>
+                        
+                        <!-- Get Started button with calories counter -->
+                        <div class="cta-container">
+                            <button id="get-started-btn" class="cta-button">
+                                Get Started
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                            
+                            <div id="calorie-counter" class="calorie-counter">
+                                <span id="calorie-count">0</span> / 2000 calories
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature Cards -->
+                <div class="features-section">
+                    <h2 class="features-title animate-fade-in">Why Track With Us?</h2>
+                    
+                    <div class="feature-cards">
+                        <div class="feature-card" data-delay="0.2">
+                            <div class="card-inner">
+                                <div class="card-front red-bg">
+                                    <i class="fas fa-apple-alt"></i>
+                                    <h3>Simple Tracking</h3>
+                                </div>
+                                <div class="card-back">
+                                    <p>Log meals with just a few taps. No complicated calorie counting required.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card" data-delay="0.4">
+                            <div class="card-inner">
+                                <div class="card-front green-bg">
+                                    <i class="fas fa-chart-pie"></i>
+                                    <h3>Insightful Analytics</h3>
+                                </div>
+                                <div class="card-back">
+                                    <p>Understand your eating patterns with beautiful, easy-to-read charts.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card" data-delay="0.6">
+                            <div class="card-inner">
+                                <div class="card-front blue-bg">
+                                    <i class="fas fa-heart"></i>
+                                    <h3>Stay Motivated</h3>
+                                </div>
+                                <div class="card-back">
+                                    <p>Achievements, challenges, and social support to keep you going.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calorie Tracker Section (Initially Hidden) -->
+        <div id="calorie-tracker" class="tracker-section hidden">
+            <div class="container">
+                <h2 class="tracker-title">Calorie Tracker</h2>
+                
+                <!-- Daily goal display -->
+                <div class="daily-goal">
+                    <span>Daily Target</span>
+                    <div class="goal-controls">
+                        <button id="decrease-goal" class="control-btn">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <span id="daily-goal-value">2000</span>
+                        <button id="increase-goal" class="control-btn">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Thermometer component -->
+                <div class="thermometer-container">
+                    <div class="thermometer">
+                        <div id="thermometer-fill" class="thermometer-fill green-bg"></div>
+                        <div class="thermometer-bubble"></div>
+                        
+                        <!-- Thermometer markings -->
+                        <div class="thermometer-markings">
+                            <div class="marking" style="bottom: 25%"></div>
+                            <div class="marking" style="bottom: 50%"></div>
+                            <div class="marking" style="bottom: 75%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Calorie info sidebar -->
+                    <div class="calorie-info">
+                        <div id="calories-consumed" class="calories-count">0</div>
+                        <div class="calories-label">calories consumed</div>
+                        <div class="calories-details">
+                            <div id="percentage-goal">0% of daily goal</div>
+                            <div id="calories-remaining">2000 calories remaining</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Current meal component -->
+                <div class="meal-card">
+                    <h3>Add Meal to Log</h3>
+                    <div class="meal-details">
+                        <div>
+                            <div class="meal-name">Grilled Chicken Salad</div>
+                            <div id="meal-calories" class="meal-calories">320 calories</div>
+                        </div>
+                        
+                        <!-- Portion adjuster -->
+                        <div class="portion-controls">
+                            <div class="portion-display">
+                                <span id="portion-value">1</span>
+                                <span class="portion-label">portions</span>
+                                
+                                <!-- Portion controllers -->
+                                <div class="portion-buttons">
+                                    <button id="increase-portion" class="portion-btn">
+                                        <i class="fas fa-chevron-up"></i>
+                                    </button>
+                                    <button id="decrease-portion" class="portion-btn">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <button id="add-meal-btn" class="add-meal-btn">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="back-link">
+                    <a href="#" id="back-to-landing">← Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
