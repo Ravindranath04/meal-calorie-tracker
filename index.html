@@ -11,7 +11,7 @@
     <div class="app-container">
         <!-- Landing Page Section -->
         <div id="landing-page" class="min-h-screen relative">
-            <!-- Background floating food icons -->
+            <!-- Background floating food icons - ENHANCED with more food items -->
             <div class="floating-food apple" style="left: 15%; top: 20%;">
                 <i class="fas fa-apple-alt"></i>
             </div>
@@ -26,6 +26,28 @@
             </div>
             <div class="floating-food heart" style="left: 50%; top: 40%;">
                 <i class="fas fa-heart"></i>
+            </div>
+            <!-- NEW additional floating food icons -->
+            <div class="floating-food lemon" style="left: 35%; top: 15%;">
+                <i class="fas fa-lemon"></i>
+            </div>
+            <div class="floating-food fish" style="left: 65%; top: 55%;">
+                <i class="fas fa-fish"></i>
+            </div>
+            <div class="floating-food bread" style="left: 10%; top: 40%;">
+                <i class="fas fa-bread-slice"></i>
+            </div>
+            <div class="floating-food cheese" style="left: 80%; top: 20%;">
+                <i class="fas fa-cheese"></i>
+            </div>
+            <div class="floating-food drumstick" style="left: 45%; top: 75%;">
+                <i class="fas fa-drumstick-bite"></i>
+            </div>
+            <div class="floating-food pepper" style="left: 90%; top: 45%;">
+                <i class="fas fa-pepper-hot"></i>
+            </div>
+            <div class="floating-food seedling" style="left: 20%; top: 85%;">
+                <i class="fas fa-seedling"></i>
             </div>
             
             <div class="container">
@@ -155,9 +177,17 @@
                 <div class="meal-card">
                     <h3>Add Meal to Log</h3>
                     <div class="meal-details">
-                        <div>
-                            <div class="meal-name">Grilled Chicken Salad</div>
-                            <div id="meal-calories" class="meal-calories">320 calories</div>
+                        <div class="meal-info">
+                            <div class="meal-image-container">
+                                <!-- Fixed image placeholder with local image fallback -->
+                                <div class="food-icon-placeholder">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="meal-name">Grilled Chicken Salad</div>
+                                <div id="meal-calories" class="meal-calories">320 calories</div>
+                            </div>
                         </div>
                         
                         <!-- Portion adjuster -->
@@ -181,6 +211,39 @@
                                 Add
                             </button>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Daily Meal Summary Section -->
+                <div class="daily-summary">
+                    <h3>Today's Meal Summary</h3>
+                    <div class="summary-grid">
+                        <div class="summary-item">
+                            <h4>Calories</h4>
+                            <p id="summary-calories">0</p>
+                        </div>
+                        <div class="summary-item">
+                            <h4>Carbs</h4>
+                            <p id="summary-carbs">0g</p>
+                        </div>
+                        <div class="summary-item">
+                            <h4>Protein</h4>
+                            <p id="summary-protein">0g</p>
+                        </div>
+                    </div>
+                    
+                    <h4>Meal Log</h4>
+                    <ul id="meal-log" class="meal-log">
+                        <!-- Meal logs will be added here dynamically -->
+                        <li class="empty-log">No meals logged today</li>
+                    </ul>
+                </div>
+                
+                <!-- Nutrition Information Cards -->
+                <div class="nutrition-info-section">
+                    <h3>Nutrition Knowledge</h3>
+                    <div class="nutrition-cards" id="nutrition-cards">
+                        <!-- Nutrition cards will be added here dynamically -->
                     </div>
                 </div>
 
